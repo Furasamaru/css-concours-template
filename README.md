@@ -2,7 +2,7 @@
 
 Point de départ du concours d'identité visuelle CSS.
 
-Ton objectif : changer uniquement l'intérieur des déclarations CSS pour adapter l'apparence à ton goût.
+Ton objectif : changer **uniquement l'intérieur des déclarations CSS** pour adapter l'apparence à ton goût.
 
 [Collection de badges](collection-de-badges)
 
