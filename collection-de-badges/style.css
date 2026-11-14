@@ -1,0 +1,138 @@
+:root {
+    /* Variables réutilisables */
+
+    --bronze: #a8663b;
+    --argent: #8792a0;
+    --or: #d2a52a;
+    --diamant: #48a8c2;
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #f3f5f9;
+    color: #20263a;
+    font-family: "Times New Roman", serif;
+    line-height: 1.5;
+}
+
+header {
+    padding: 48px 20px;
+    background-color: #2e295b;
+    color: #ffffff;
+    text-align: center;
+}
+
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section > div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+article {
+    overflow: hidden;
+    padding: 16px;
+    background-color: #ffffff;
+    border: 2px solid #dfe3ec;
+    border-radius: 20px;
+}
+
+article.bronze {
+    border-color: var(--bronze);
+}
+
+article.argent {
+    border-color: var(--argent);
+}
+
+article.or {
+    border-color: var(--or);
+}
+
+article.diamant {
+    border-color: var(--diamant);
+}
+
+article.bloque {
+    background-color: #e8eaf1;
+    color: #626b80;
+}
+
+article.bloque img {
+    filter: grayscale(70%);
+}
+
+article img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 1px;
+    object-fit: cover;
+}
+
+
+footer {
+    padding: 20px;
+    color: #626b80;
+    text-align: center;
+}
+
+
+/* Cartes secrètes : animation glossy */
+article {
+    position: relative;
+}
+
+article.secret > * {
+    position: relative;
+    z-index: 1;
+}
+
+article.secret::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: -50%;
+    left: -60%;
+    width: 45%;
+    height: 200%;
+    background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.45),
+            transparent
+    );
+    transform: skewX(-20deg);
+    pointer-events: none;
+    animation: reflet 3s ease-in-out infinite;
+}
+
+@keyframes reflet {
+    from {
+        left: -60%;
+    }
+
+    to {
+        left: 120%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    article.secret::after {
+        animation: none;
+    }
+}
